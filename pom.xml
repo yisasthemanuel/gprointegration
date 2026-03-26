@@ -98,7 +98,7 @@
 		<!-- GPRO API Client -->
 		<dependency>
 			<groupId>org.jlobato.gpro</groupId>
-			<artifactId>gpro-api</artifactId>
+			<artifactId>gpro-client</artifactId>
 			<version>${org.jlobato.gpro.gpro-api.version}</version>
 		</dependency>
 
