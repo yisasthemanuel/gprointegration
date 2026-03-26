@@ -36,6 +36,7 @@ public class GproIntegrationApplication {
 		log.info("GproIntegrationApplication is UP!!!!");
 
 		ApiClient client = new ApiClient();
+		// TODO: meterlo en el cloud config o que llegue por parámetros de arranque (Docker)
 		client.setBasePath("https://gpro.net/");
 		client.setBearerToken(
 				"Bearer eyJ0eXAiOiJKV1QiLCAiYWxnIjoiSFMyNTYifQ.eyJpZCI6IDExMzYxMiwiY3JlYXRlZCI6IlN1biBOb3YgMTcgMTY6MzQ6MTYgVVRDKzAxMDAgMjAyNCJ9.5KfLXI-B_12pJ9FSXP8jP26ssmlW_BIFUtSoj9qZ7C0");
@@ -152,7 +153,7 @@ public class GproIntegrationApplication {
 					}
 
 					if (!discarded) {
-						log.info("Driver match: id {}, name {}, OA {}, Con {}, Tal {}, Agr{}, Exp {}, Tei {}, Sta {}, Cha {}, Mot {}, Rep {}, Wei {}, Age {}, Min sign fee {}, Min salary {}, Offers {}"
+						log.info("Driver match: id {}, name {}, OA {}, Con {}, Tal {}, Agr{}, Exp {}, Tei {}, Sta {}, Cha {}, Mot {}, Rep {}, Wei {}, Age {}, Offers {}"
 							, driverID
 							, driverProfile.getDriName()
 							, driverProfile.getOverall()
@@ -183,6 +184,8 @@ public class GproIntegrationApplication {
 		log.info("Drivers with both tracks as FT: {}", both.size());
 		log.info("Drivers with Buenos Aires track as FT: {}", buenosAires.size());
 		log.info("Drivers with Laguna Seca track as FT: {}", lagunaSeca.size());
+		log.info("----");
+		log.info("API Request Remaining {}", response.getApiRequestsRemaining());
 	}
 
 	@Bean
