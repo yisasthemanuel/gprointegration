@@ -129,7 +129,7 @@ public class GproIntegrationApplication {
 
 				boolean discarded = false;
 
-				if (hasBuenosAires || hasLagunaSeca) {
+				if (hasLagunaSeca) {
 					if (driverProfile.getStamina() < minStamina) {
 						buenosAires.remove(driverProfile);
 						lagunaSeca.remove(driverProfile);
@@ -181,8 +181,8 @@ public class GproIntegrationApplication {
 				mot, rep, sta, tal, tei, exp, age, minsal, offRange, wei).block();
 		}
 		log.info("Drivers read from API {}", driversRead);
-		log.info("Drivers with both tracks as FT: {}", both.size());
-		log.info("Drivers with Buenos Aires track as FT: {}", buenosAires.size());
+		//log.info("Drivers with both tracks as FT: {}", both.size());
+		//log.info("Drivers with Buenos Aires track as FT: {}", buenosAires.size());
 		log.info("Drivers with Laguna Seca track as FT: {}", lagunaSeca.size());
 		log.info("----");
 		log.info("API Request Remaining {}", response.getApiRequestsRemaining());
